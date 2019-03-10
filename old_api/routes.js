@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var db = require('./js/server/dataservice.js');
+var db = require('../js/server/dataservice.js');
 var loggedInUser = undefined;
 db.connect();
 

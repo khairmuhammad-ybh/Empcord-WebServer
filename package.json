@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test1": "echo \"Error test 1: no test specified\" && exit 0",
+    "test2": "echo \"Error test 2: no test specified\" && exit 0",
+    "server-auth": "nodemon api_modules/Authentication/authentication.server.js",
+    "server-dir": "nodemon api_modules/Directories/directories.server.js",
+    "server-event": "nodemon api_modules/Events/events.server.js",
+    "server-user": "nodemon api_modules/Users/users.server.js",
+    "start": "concurrently \"npm run server-dir\" \"npm run server-auth\" \"npm run server-user\" \"npm run server-event\""
   },
-  "author": "",
+  "author": "Muhammad Khairi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.3",
     "mongoose": "^5.3.2"
   },
